@@ -1,6 +1,8 @@
 <?php
 
-$name = 'Nicola';
+$mainText = $_POST["main-text"];
+$badWord = $_POST["bad-word"];
+$newText = str_replace($badWord, '***', $mainText, $count );
 
 ?>
 
@@ -9,7 +11,7 @@ $name = 'Nicola';
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Server</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
@@ -17,17 +19,14 @@ $name = 'Nicola';
   <main>
     <section>
       <div class="container">
-        <form action="./server.php" method="POST">
-          <div class="mb-3">
-            <label for="main-text" class="form-label">Your text</label>
-            <textarea class="form-control" id="main-text" name="main-text" placeholder="Insert text here"></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="bad-word" class="form-label">Word to censor</label>
-            <input type="text" class="form-control" id="bad-word" name="bad-word" rows="3" placeholder="This word will appear as '***' ">
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <p>
+          <?php echo $mainText ?>
+        </p>
+        <em class="mb-5">Il tuo testo contiene <?php echo strlen($mainText) ?> caratteri.</em>
+        <p>
+        <?php echo $newText ?>
+        </p>
+        <em>Il tuo nuovo testo contiene <?php echo strlen($newText) ?> caratteri dopo aver effettuato <?php echo $count ?> sostituzioni.</em>
       </div>
     </section>
   </main>

@@ -17,16 +17,32 @@ $newText = str_replace($badWord, '***', $mainText, $count );
   <body>
 
   <main>
-    <section>
+    <section class="pt-5">
       <div class="container">
-        <p>
-          <?php echo $mainText ?>
-        </p>
-        <em class="mb-5">Il tuo testo contiene <?php echo strlen($mainText) ?> caratteri.</em>
-        <p>
-        <?php echo $newText ?>
-        </p>
-        <em>Il tuo nuovo testo contiene <?php echo strlen($newText) ?> caratteri dopo aver effettuato <?php echo $count ?> sostituzioni.</em>
+        <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header"><strong>Il testo originale</strong></div>
+              <div class="card-body">
+                <p>
+                  <?php echo $mainText ?>
+                </p>
+                <em>Il tuo testo contiene <?php echo strlen($mainText) ?> caratteri.</em>
+              </div>
+              </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header"><strong>Il nuovo testo</strong></div>
+              <div class="card-body">
+                <p>
+                <?php echo $newText ?>
+                </p>
+                <em>Il tuo nuovo testo contiene <?php echo strlen($newText) ?> caratteri dopo aver effettuato <?php echo $count ?> sostituzioni.</em>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

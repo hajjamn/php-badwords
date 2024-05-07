@@ -1,7 +1,7 @@
 <?php
 
 $mainText = $_POST["main-text"];
-$badWord = $_POST["bad-word"];
+$badWord = explode(",", ($_POST["bad-word"]));
 $newText = str_replace($badWord, '***', $mainText, $count );
 
 ?>
